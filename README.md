@@ -55,3 +55,29 @@ sudo apt install elasticsearch -y
 sudo systemctl enable elasticsearch
 sudo systemctl start elasticsearch
 ```
+## Logstash 설치
+1. Logstash를 설치합니다.
+``` sh
+sudo apt install logstash -y
+```
+2. Logstash 서비스를 활성화하고 시작합니다.
+``` sh
+sudo systemctl enable logstash
+sudo systemctl start logstash
+```
+## Kibana 설치
+1. Kibana를 설치합니다.
+``` sh
+sudo apt install kibana -y
+```
+2. Kibana 서비스를 활성화하고 시작합니다.
+``` sh
+sudo systemctl enable kibana
+sudo systemctl start kibana
+```
+
+## Filebeat 구성
+1. Filebeat 구성 파일을 엽니다.
+``` sh
+sudo nano /etc/filebeat/filebeat.yml
+```
