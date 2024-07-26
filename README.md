@@ -2,6 +2,9 @@
 
 이 문서는 Ubuntu에서 Elasticsearch, Logstash, Kibana, Filebeat를 설치하고 구성하는 방법에 대해 설명합니다.
 
+![image](https://github.com/user-attachments/assets/b635bb79-171f-4e18-9c82-f7cb9b73bc7b)
+
+
 ## 전제 조건
 
 시스템이 최신 상태인지 확인합니다.
