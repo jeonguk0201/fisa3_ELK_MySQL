@@ -215,6 +215,12 @@ END;
 | Embarked  | 탑승지, C = 셰르부르, Q = 퀸즈타운(아일랜드 코브), S = 사우샘프턴 |
 
 ---
+## Kibana 시각화
+### Dashboard
+![image](https://github.com/user-attachments/assets/e6526d7f-012c-4348-ab02-b2691fb12f94)
+![image](https://github.com/user-attachments/assets/1ac10faf-1d32-4c2e-b898-87657b2e49d8)
+
+
 ## Troubleshooting
 ![](https://velog.velcdn.com/images/yuwankang/post/ab4a7ea9-a382-4dfa-9498-b17fe3f4d9f8/image.png)
 > 이 프로젝트를 진행하는데 문제가 없었으나 
