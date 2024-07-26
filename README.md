@@ -119,22 +119,22 @@ sudo systemctl restart logstash
 
 ## titanic data table
 1. 기존 테이블 데이터 확인
-```
-Field      |Type        |Null|Key|Default|Extra|
------------+------------+----+---+-------+-----+
-passengerid|int         |NO  |   |       |     |
-survived   |int         |YES |   |       |     |
-pclass     |int         |YES |   |       |     |
-name       |varchar(100)|YES |   |       |     |
-gender     |varchar(50) |YES |   |       |     |
-age        |double      |YES |   |       |     |
-sibsp      |int         |YES |   |       |     |
-parch      |int         |YES |   |       |     |
-ticket     |varchar(80) |YES |   |       |     |
-fare       |double      |YES |   |       |     |
-cabin      |varchar(50) |YES |   |       |     |
-embarked   |varchar(20) |YES |   |       |     |
-```
+
+|Field      |Type        |Null|Key|Default|Extra|
+|-----------|------------|----|---|-------|-----|
+|passengerid|int         |NO  |   |       |     |
+|survived   |int         |YES |   |       |     |
+|pclass     |int         |YES |   |       |     |
+|name       |varchar(100)|YES |   |       |     |
+|gender     |varchar(50) |YES |   |       |     |
+|age        |double      |YES |   |       |     |
+|sibsp      |int         |YES |   |       |     |
+|parch      |int         |YES |   |       |     |
+|ticket     |varchar(80) |YES |   |       |     |
+|fare       |double      |YES |   |       |     |
+|cabin      |varchar(50) |YES |   |       |     |
+|embarked   |varchar(20) |YES |   |       |     |
+
 2. 결측치 제거
 ``` sql
 -- 평균 나이를 계산하여 변수에 저장
@@ -178,20 +178,35 @@ SET age_group = CASE
 END;
 ```
    결과
-```
-Field      |Type        |Null|Key|Default|Extra|
------------+------------+----+---+-------+-----+
-passengerid|int         |NO  |   |       |     |
-survived   |int         |YES |   |       |     |
-pclass     |int         |YES |   |       |     |
-name       |varchar(100)|YES |   |       |     |
-gender     |varchar(50) |YES |   |       |     |
-age        |double      |YES |   |       |     |
-sibsp      |int         |YES |   |       |     |
-parch      |int         |YES |   |       |     |
-ticket     |varchar(80) |YES |   |       |     |
-fare       |double      |YES |   |       |     |
-cabin      |varchar(50) |YES |   |       |     |
-embarked   |varchar(20) |YES |   |       |     |
-age_group  |varchar(10) |YES |   |       |     |
-```
+
+|Field      |Type        |Null|Key|Default|Extra|
+|-----------|------------|----|---|-------|-----|
+|passengerid|int         |NO  |   |       |     |
+|survived   |int         |YES |   |       |     |
+|pclass     |int         |YES |   |       |     |
+|name       |varchar(100)|YES |   |       |     |
+|gender     |varchar(50) |YES |   |       |     |
+|age        |double      |YES |   |       |     |
+|sibsp      |int         |YES |   |       |     |
+|parch      |int         |YES |   |       |     |
+|ticket     |varchar(80) |YES |   |       |     |
+|fare       |double      |YES |   |       |     |
+|cabin      |varchar(50) |YES |   |       |     |
+|embarked   |varchar(20) |YES |   |       |     |
+|age_group  |varchar(10) |YES |   |       |     |
+
+
+## 데이터셋 셜명
+
+| Column    | Description                             |
+|-----------|-----------------------------------------|
+| Survived  | 0 = 사망, 1 = 생존                      |
+| Pclass    | 1 = 1등석, 2 = 2등석, 3 = 3등석         |
+| Sex       | male = 남성, female = 여성              |
+| Age       | 나이                                    |
+| SibSp     | 타이타닉 호에 동승한 자매 / 배우자의 수 |
+| Parch     | 타이타닉 호에 동승한 부모 / 자식의 수   |
+| Ticket    | 티켓 번호                               |
+| Fare      | 승객 요금                               |
+| Cabin     | 방 호수                                 |
+| Embarked  | 탑승지, C = 셰르부르, Q = 퀸즈타운, S = 사우샘프턴 |
