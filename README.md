@@ -76,8 +76,42 @@ sudo systemctl enable kibana
 sudo systemctl start kibana
 ```
 
-## Filebeat 구성
-1. Filebeat 구성 파일을 엽니다.
+## Logstash 구성
+1. Logstash 구성 파일 생성:
 ``` sh
-sudo nano /etc/filebeat/filebeat.yml
+sudo vim /etc/logstash/conf.d/titanic.conf
 ```
+2. 다음 구성 추가
+``` sh
+input {
+  jdbc {
+    jdbc_driver_library => "/usr/share/logstash/logstash-core/lib/jars/mysql-connector-java-8.0.26.jar"
+    jdbc_driver_class => "com.mysql.cj.jdbc.Driver"
+    jdbc_connection_string => "jdbc:mysql://localhost:3306/fisa"
+    jdbc_user => "root"
+    jdbc_password => "root"
+    statement => "SELECT passengerid AS id, survived, pclass, name, gender, age, sibsp, parch, ticket, fare, cabin, embarked FROM titanic_raw"
+  }
+}
+
+output {
+  elasticsearch {
+    hosts => ["localhost:9200"]
+    index => "titanic"
+    document_id => "%{id}"
+  }
+}
+```
+3. Logstash 구성 테스트:
+``` sh
+sudo -u logstash /usr/share/logstash/bin/logstash --path.settings /etc/logstash -t
+```
+4. Logstash 재시작:
+``` sh
+sudo systemctl restart logstash
+```
+
+## Kibana 접근
+
+1. 웹 브라우저를 열고 `http://localhost:5601`로 이동합니다.
+2. Kibana 대시보드가 표시됩니다. 여기서 데이터를 탐색하고 시각화할 수 있습니다.
