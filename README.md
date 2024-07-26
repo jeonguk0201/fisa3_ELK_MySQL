@@ -1,4 +1,4 @@
-# [우리FISA 3기] ELK와 MySQL을 활용한 타이타닉 데이터 분석 프로젝트
+# 🌊[우리FISA 3기] ELK와 MySQL을 활용한 타이타닉 데이터 분석 프로젝트🚢
 
 이 문서는 Ubuntu에서 Elasticsearch, Logstash, Kibana, Filebeat를 설치하고 구성하는 방법에 대해 설명합니다.
 
