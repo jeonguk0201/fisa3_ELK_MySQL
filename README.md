@@ -241,7 +241,7 @@ mysql에서 만든 데이터를 logstash를 통해 kibana로 가는
 
 위와 같은 방법이 있었습니다.
 추가로
-mysql-connector-java.jar 파일 버전에 따라서도 
+mysql-connector-java.jar 파일 버전에 따라서도 특이사항이 발견되었습니다.
 
 #### ELK에서 인식 불가능 
 ![](https://velog.velcdn.com/images/yuwankang/post/39fdf3d4-ade6-43e7-bb2b-94d6d6741de5/image.png)
