@@ -213,3 +213,38 @@ END;
 | Fare      | 승객 요금                               |
 | Cabin     | 방 호수                                 |
 | Embarked  | 탑승지, C = 셰르부르, Q = 퀸즈타운(아일랜드 코브), S = 사우샘프턴 |
+
+---
+## Troubleshooting
+![](https://velog.velcdn.com/images/yuwankang/post/ab4a7ea9-a382-4dfa-9498-b17fe3f4d9f8/image.png)
+> 이 프로젝트를 진행하는데 문제가 없었으나 
+mysql에서 만든 데이터를 logstash를 통해 kibana로 가는
+데이터 파이프라인 구축 과정에서 데이터 흐름의 이상함을 발견하였습니다.
+처음 발견했을 당시 실제 데이터 또한 kibana에서 중복 데이터들이 발견되어 
+시각화에 어려움을 겪었습니다.
+
+### Troubleshooting
+#### Logstash 설정 확인
+- jdbc 플러그인의 sql_last_value를 설정하여 이전에 처리된 마지막 값을 기준으로 새로운 데이터만 가져오도록 설정하는 방법.
+
+#### 데이터 수집 주기 조정
+- 수집 주기를 적절히 조정하여 데이터가 중복되지 않도록 하는 방법
+
+#### 중복 데이터 필터링
+- Logstash나 Elasticsearch에서 중복된 데이터를 필터링하는 처리를 추가하는 방법
+  
+#### Elasticsearch 문서 ID 설정
+- Elasticsearch에 문서를 삽입할 때, 문서 ID를 명시적으로 설정하여 동일한 ID의 문서만 업데이트 하는 방법
+
+#### 중복 데이터 확인
+- Kibana에서 중복된 데이터가 발생하는 원인을 분석하여 데이터 파이프라인의 문제를 파악하고 수정합니다.
+
+위와 같은 방법이 있었습니다.
+추가로
+mysql-connector-java.jar 파일 버전에 따라서도 
+
+#### ELK에서 인식 불가능 
+![](https://velog.velcdn.com/images/yuwankang/post/39fdf3d4-ade6-43e7-bb2b-94d6d6741de5/image.png)
+
+#### ELK 인식 가능 그러나 데이터 중복 되는 경우 
+![](https://velog.velcdn.com/images/yuwankang/post/f0ec28bc-14c9-4416-8801-aca94c1a29ad/image.png) 
