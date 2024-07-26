@@ -4,11 +4,15 @@
 
 ![image](https://github.com/user-attachments/assets/777f32f8-10d5-471d-8aef-6386d271fe5a)
 
-## 역할 분담
+## 팀원 및 역할 분담 🍝
 - 부준혁, 이정욱: 데이터 분석 및 Dash Board 작성
 - 박현우: Readme 작성 및 발표자료 작성
 - 강유완: 파이프라인 트러블슈팅 관련 작업
 
+---
+
+
+# ELK, Logstash, Kibana, Mysql 파이프라인 구축 🛠
 ## 전제 조건
 
 시스템이 최신 상태인지 확인합니다.
@@ -118,8 +122,10 @@ sudo systemctl restart logstash
 1. 웹 브라우저를 열고 `http://localhost:5601`로 이동합니다.
 2. Kibana 대시보드가 표시됩니다. 여기서 데이터를 탐색하고 시각화할 수 있습니다.
 
+---
+# `titanic_raw` 데이터 전처리🎞
 
-## titanic data table
+## data table check ✨
 1. 기존 테이블 데이터 확인
 
 |Field      |Type        |Null|Key|Default|Extra|
@@ -214,13 +220,13 @@ END;
 | Embarked  | 탑승지, C = 셰르부르, Q = 퀸즈타운(아일랜드 코브), S = 사우샘프턴 |
 
 ---
-## Kibana 시각화
-### Dashboard
+# Kibana 시각화 👀
+## Dashboard
 ![image](https://github.com/user-attachments/assets/e6526d7f-012c-4348-ab02-b2691fb12f94)
 ![image](https://github.com/user-attachments/assets/1ac10faf-1d32-4c2e-b898-87657b2e49d8)
 
-
-## Troubleshooting
+---
+# Troubleshooting🤯
 ![](https://velog.velcdn.com/images/yuwankang/post/ab4a7ea9-a382-4dfa-9498-b17fe3f4d9f8/image.png)
 > 이 프로젝트를 진행하는데 문제가 없었으나 
 mysql에서 만든 데이터를 logstash를 통해 kibana로 가는
