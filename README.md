@@ -17,11 +17,6 @@ sudo apt upgrade -y
 ``` sh
 sudo apt install apt-transport-https curl -y
 ```
-
-물론입니다. 아래는 한글로 된 설명과 함께 마크다운 형식으로 작성된 ELK 스택과 Filebeat 설치 가이드입니다. 이 내용을 GitHub README 파일에 사용할 수 있습니다.
-
-markdown
-코드 복사
 # ELK 스택 및 Filebeat 설치 가이드
 
 이 문서는 Ubuntu에서 Elasticsearch, Logstash, Kibana, Filebeat를 설치하고 구성하는 방법에 대해 설명합니다.
