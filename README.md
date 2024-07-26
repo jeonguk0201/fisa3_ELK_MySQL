@@ -4,6 +4,10 @@
 
 ![image](https://github.com/user-attachments/assets/777f32f8-10d5-471d-8aef-6386d271fe5a)
 
+## 역할 분담
+- 부준혁, 이정욱: 데이터 분석 및 Dash Board 작성
+- 박현우: Readme 작성 및 발표자료 작성
+- 강유완: 파이프라인 트러블슈팅 관련 작업
 
 ## 전제 조건
 
